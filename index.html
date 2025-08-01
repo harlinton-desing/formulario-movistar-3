@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Tratamiento de Datos</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Pantalla de Consentimiento -->
+    <div id="consentScreen" class="screen-container">
+        <div class="particles-bg">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container-fluid d-flex align-items-center justify-content-center min-vh-100">
+            <div class="card gamer-card animate-slide-in-top" style="max-width: 800px;">
+                <div class="card-header text-center">
+                    <div class="header-image mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/99e0c9c0-84e0-41c3-96a0-3a204cfbe435.png" 
+                             alt="Header moderno con diseño gamer para tratamiento de datos personales"
+                             class="img-fluid rounded"
+                             onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5c42f74b-2436-41ad-8546-c006b1ceacb0.png'">
+                    </div>
+                    <h1 class="gamer-title neon-text animate-glow">Tratamiento de Datos</h1>
+                </div>
+                
+                <div class="card-body text-center">
+                    <div class="consent-box glass-effect neon-border animate-pulse-border p-4 mb-4">
+                        <p class="gamer-text text-white fs-5 mb-3">
+                            PARA CONTINUAR, ES IMPORTANTE CONOCER SI VOLUNTARIAMENTE ACEPTAS SUMINISTRAR TUS DATOS PERSONALES
+                        </p>
+                        <p class="text-purple mb-2">ARTÍCULO 5 LEY 1581 DE 2012</p>
+                        <p class="text-white fw-bold">ACEPTO SUMINISTRAR</p>
+                    </div>
+                    
+                    <div class="d-flex gap-3 justify-content-center">
+                        <button id="acceptBtn" class="btn btn-success btn-lg gamer-button animate-glow gamer-text px-4">
+                            Aceptar
+                        </button>
+                        <button id="rejectBtn" class="btn btn-danger btn-lg gamer-button gamer-text px-4">
+                            No Acepto
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla del Formulario -->
+    <div id="formScreen" class="screen-container d-none">
+        <div class="particles-bg">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container-fluid py-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <!-- Header Image -->
+                    <div class="form-header-image mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1e1faba0-086e-4833-bf24-b10050ce46d4.png" 
+                             alt="Interfaz moderna de formulario de registro con estilo gamer y colores vibrantes"
+                             class="img-fluid rounded"
+                             onerror="this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95e7de5d-eb39-4ea0-80f0-0c1a213a8300.png'">
+                    </div>
+                    
+                    <!-- Formulario -->
+                    <div class="card gamer-card animate-slide-in-bottom">
+                        <div class="card-header text-center">
+                            <h2 class="gamer-title neon-text animate-float mb-0">Formulario de Registro</h2>
+                        </div>
+                        
+                        <div class="card-body">
+                            <form id="registrationForm">
+                                <div class="row g-4">
+                                    <!-- Nombre Completo -->
+                                    <div class="col-md-6">
+                                        <label for="nombreCompleto" class="form-label text-white gamer-text">Nombre Completo *</label>
+                                        <input type="text" class="form-control gamer-input" id="nombreCompleto" 
+                                               placeholder="Ingrese nombre y apellido" required>
+                                    </div>
+                                    
+                                    <!-- Tipo de Documento -->
+                                    <div class="col-md-6">
+                                        <label for="tipoDocumento" class="form-label text-white gamer-text">Tipo de Documento *</label>
+                                        <select class="form-select gamer-input" id="tipoDocumento" required>
+                                            <option value="">Seleccione tipo de documento</option>
+                                            <option value="CC">Cédula de Ciudadanía</option>
+                                            <option value="CE">Cédula de Extranjería</option>
+                                            <option value="TI">Tarjeta de Identidad</option>
+                                            <option value="PP">Pasaporte</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Número de Documento -->
+                                    <div class="col-md-6">
+                                        <label for="numeroDocumento" class="form-label text-white gamer-text">Número de Documento *</label>
+                                        <input type="text" class="form-control gamer-input" id="numeroDocumento" 
+                                               placeholder="Número de documento" required>
+                                    </div>
+                                    
+                                    <!-- Fecha de Expedición -->
+                                    <div class="col-md-6">
+                                        <label for="fechaExpedicion" class="form-label text-white gamer-text">Fecha de Expedición *</label>
+                                        <input type="date" class="form-control gamer-input" id="fechaExpedicion" required>
+                                    </div>
+                                    
+                                    <!-- Fecha de Nacimiento -->
+                                    <div class="col-md-6">
+                                        <label for="fechaNacimiento" class="form-label text-white gamer-text">Fecha de Nacimiento *</label>
+                                        <input type="date" class="form-control gamer-input" id="fechaNacimiento" required>
+                                    </div>
+                                    
+                                    <!-- Correo Electrónico -->
+                                    <div class="col-md-6">
+                                        <label for="correoElectronico" class="form-label text-white gamer-text">Correo Electrónico *</label>
+                                        <input type="email" class="form-control gamer-input" id="correoElectronico" 
+                                               placeholder="ejemplo@correo.com" required>
+                                    </div>
+                                    
+                                    <!-- Dirección Completa -->
+                                    <div class="col-12">
+                                        <label for="direccionCompleta" class="form-label text-white gamer-text">Dirección Completa *</label>
+                                        <input type="text" class="form-control gamer-input" id="direccionCompleta" 
+                                               placeholder="Calle, número, torre, apartamento" required>
+                                    </div>
+                                    
+                                    <!-- Ciudad o Municipio -->
+                                    <div class="col-md-6">
+                                        <label for="ciudadMunicipio" class="form-label text-white gamer-text">Ciudad o Municipio *</label>
+                                        <select class="form-select gamer-input" id="ciudadMunicipio" required>
+                                            <option value="">Seleccione ciudad</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Barrio -->
+                                    <div class="col-md-6">
+                                        <label for="barrio" class="form-label text-white gamer-text">Barrio *</label>
+                                        <input type="text" class="form-control gamer-input" id="barrio" 
+                                               placeholder="Nombre del barrio" required>
+                                    </div>
+                                    
+                                    <!-- Estrato -->
+                                    <div class="col-md-6">
+                                        <label for="estrato" class="form-label text-white gamer-text">Estrato *</label>
+                                        <select class="form-select gamer-input" id="estrato" required>
+                                            <option value="">Seleccione estrato</option>
+                                            <option value="1">Estrato 1</option>
+                                            <option value="2">Estrato 2</option>
+                                            <option value="3">Estrato 3</option>
+                                            <option value="4">Estrato 4</option>
+                                            <option value="5">Estrato 5</option>
+                                            <option value="6">Estrato 6</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Celular -->
+                                    <div class="col-md-6">
+                                        <label for="celular" class="form-label text-white gamer-text">Celular *</label>
+                                        <input type="tel" class="form-control gamer-input" id="celular" 
+                                               placeholder="Número de celular" required>
+                                    </div>
+                                    
+                                    <!-- Plan -->
+                                    <div class="col-md-6">
+                                        <label for="plan" class="form-label text-white gamer-text">Plan *</label>
+                                        <select class="form-select gamer-input" id="plan" required>
+                                            <option value="">Seleccione un plan</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <!-- Valor del Plan -->
+                                    <div class="col-md-6">
+                                        <label for="valorPlan" class="form-label text-white gamer-text">Valor del Plan</label>
+                                        <input type="text" class="form-control gamer-input" id="valorPlan" 
+                                               placeholder="Se actualizará automáticamente" readonly>
+                                    </div>
+                                </div>
+                                
+                                <!-- Botones -->
+                                <div class="d-flex gap-3 justify-content-center mt-5">
+                                    <button type="submit" class="btn btn-success btn-lg gamer-button animate-glow gamer-text px-4">
+                                        Enviar
+                                    </button>
+                                    <button type="button" id="cancelBtn" class="btn btn-danger btn-lg gamer-button gamer-text px-4">
+                                        Cancelar
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pantalla de Resumen -->
+    <div id="summaryScreen" class="screen-container d-none">
+        <div class="particles-bg">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container-fluid py-4">
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <div class="card gamer-card animate-slide-in-top">
+                        <div class="card-header text-center">
+                            <h2 class="gamer-title neon-text animate-float mb-0">Resumen de Datos</h2>
+                        </div>
+                        
+                        <div class="card-body">
+                            <div class="row g-4" id="summaryContent">
+                                <!-- El contenido se generará dinámicamente -->
+                            </div>
+                            
+                            <div class="d-flex gap-3 justify-content-center mt-5">
+                                <button id="confirmBtn" class="btn btn-success btn-lg gamer-button animate-glow gamer-text px-4">
+                                    ✅ Confirmar
+                                </button>
+                                <button id="correctBtn" class="btn btn-outline-light btn-lg gamer-button gamer-text px-4">
+                                    ✏️ Corregir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Rechazo de Consentimiento -->
+    <div class="modal fade" id="rejectModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content gamer-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Tratamiento de Datos Requerido</h5>
+                </div>
+                <div class="modal-body">
+                    <p class="text-white">Si no acepta el tratamiento de datos, no es posible enviarle el servicio.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary gamer-button" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Error de Validación -->
+    <div class="modal fade" id="validationModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content gamer-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger">Error de Validación</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="validationMessage" class="text-white"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary gamer-button" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cancelación -->
+    <div class="modal fade" id="cancelModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content gamer-modal">
+                <div class="modal-header">
+                    <h5 class="modal-title text-white">¿Por qué desea cancelar?</h5>
+                </div>
+                <div class="modal-body">
+                    <textarea id="cancelReason" class="form-control gamer-input" rows="4" 
+                              placeholder="Ingrese el motivo de cancelación..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary gamer-button" data-bs-dismiss="modal">Volver</button>
+                    <button type="button" id="confirmCancelBtn" class="btn btn-danger gamer-button">Confirmar Cancelación</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

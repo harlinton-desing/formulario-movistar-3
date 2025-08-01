@@ -1,0 +1,408 @@
+/* Estilos para el formulario de tratamiento de datos - Diseño Gamer */
+
+/* Variables CSS */
+:root {
+    --primary-purple: #9333ea;
+    --primary-blue: #4f46e5;
+    --primary-indigo: #3b82f6;
+    --neon-purple: rgba(147, 51, 234, 0.8);
+    --glass-bg: rgba(0, 0, 0, 0.3);
+    --text-purple: #c084fc;
+}
+
+/* Reset y configuración base */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Contenedores de pantalla */
+.screen-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, 
+        rgba(147, 51, 234, 0.8) 0%, 
+        rgba(79, 70, 229, 0.8) 25%, 
+        rgba(59, 130, 246, 0.8) 50%, 
+        rgba(147, 51, 234, 0.8) 75%, 
+        rgba(168, 85, 247, 0.8) 100%);
+    position: relative;
+}
+
+/* Efectos de partículas de fondo */
+.particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--neon-purple);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 80%; left: 80%; animation-delay: 1s; }
+.particle:nth-child(3) { top: 40%; left: 60%; animation-delay: 2s; }
+.particle:nth-child(4) { top: 60%; left: 40%; animation-delay: 3s; }
+.particle:nth-child(5) { top: 10%; left: 90%; animation-delay: 4s; }
+
+/* Animaciones */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 15px var(--neon-purple);
+    }
+    50% {
+        box-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple), 0 0 30px var(--neon-purple);
+    }
+}
+
+@keyframes pulse-border {
+    0%, 100% { border-color: rgba(147, 51, 234, 0.3); }
+    50% { border-color: rgba(147, 51, 234, 0.8); }
+}
+
+@keyframes slideInFromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clases de animación */
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse-border {
+    animation: pulse-border 2s ease-in-out infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-slide-in-top {
+    animation: slideInFromTop 0.6s ease-out;
+}
+
+.animate-slide-in-bottom {
+    animation: slideInFromBottom 0.6s ease-out;
+}
+
+/* Tipografía gamer */
+.gamer-title {
+    font-family: 'Orbitron', monospace;
+    font-weight: 900;
+    color: white;
+}
+
+.gamer-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+}
+
+.neon-text {
+    text-shadow: 
+        0 0 5px var(--neon-purple),
+        0 0 10px var(--neon-purple),
+        0 0 15px var(--neon-purple);
+}
+
+.text-purple {
+    color: var(--text-purple);
+}
+
+/* Efectos de cristal */
+.glass-effect {
+    backdrop-filter: blur(10px);
+    background: var(--glass-bg);
+    border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+/* Bordes neón */
+.neon-border {
+    border: 2px solid rgba(147, 51, 234, 0.6) !important;
+    box-shadow: 
+        0 0 5px rgba(147, 51, 234, 0.4),
+        inset 0 0 5px rgba(147, 51, 234, 0.2);
+}
+
+/* Cards gamer */
+.gamer-card {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 2px solid rgba(147, 51, 234, 0.3) !important;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 10;
+}
+
+.gamer-card .card-header {
+    background: rgba(147, 51, 234, 0.2) !important;
+    border-bottom: 1px solid rgba(147, 51, 234, 0.3) !important;
+}
+
+/* Inputs gamer */
+.gamer-input {
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: 1px solid rgba(147, 51, 234, 0.3) !important;
+    color: white !important;
+    transition: all 0.3s ease;
+}
+
+.gamer-input:focus {
+    background: rgba(0, 0, 0, 0.7) !important;
+    border-color: rgba(147, 51, 234, 0.8) !important;
+    box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.3) !important;
+    color: white !important;
+}
+
+.gamer-input::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.gamer-input option {
+    background: rgba(0, 0, 0, 0.9) !important;
+    color: white !important;
+}
+
+/* Botones gamer */
+.gamer-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.gamer-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.gamer-button:hover::before {
+    left: 100%;
+}
+
+.gamer-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Modales gamer */
+.gamer-modal .modal-content {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border: 2px solid rgba(147, 51, 234, 0.5) !important;
+    backdrop-filter: blur(10px);
+}
+
+.gamer-modal .modal-header {
+    border-bottom: 1px solid rgba(147, 51, 234, 0.3) !important;
+}
+
+.gamer-modal .modal-footer {
+    border-top: 1px solid rgba(147, 51, 234, 0.3) !important;
+}
+
+/* Caja de consentimiento */
+.consent-box {
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+/* Imágenes de encabezado */
+.header-image img,
+.form-header-image img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-header-image {
+    height: 300px;
+    overflow: hidden;
+}
+
+.form-header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tarjetas de resumen */
+.summary-card {
+    background: rgba(147, 51, 234, 0.1) !important;
+    border: 1px solid rgba(147, 51, 234, 0.3) !important;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.summary-card h5 {
+    color: var(--text-purple);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.summary-card p {
+    color: white;
+    margin-bottom: 8px;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.summary-card .text-purple {
+    color: var(--text-purple);
+    font-weight: 600;
+}
+
+/* Efectos hover para elementos interactivos */
+.gamer-input:hover {
+    border-color: rgba(147, 51, 234, 0.6) !important;
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(147, 51, 234, 0.6);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(147, 51, 234, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .gamer-title {
+        font-size: 1.8rem !important;
+    }
+    
+    .animate-float {
+        animation: none;
+    }
+    
+    .particle {
+        display: none;
+    }
+    
+    .form-header-image {
+        height: 200px;
+    }
+    
+    .gamer-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .gamer-title {
+        font-size: 1.5rem !important;
+    }
+    
+    .consent-box {
+        padding: 15px !important;
+    }
+    
+    .gamer-button {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Estados de validación */
+.is-invalid.gamer-input {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.3) !important;
+}
+
+.is-valid.gamer-input {
+    border-color: #198754 !important;
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.3) !important;
+}
+
+/* Efectos adicionales */
+.gamer-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.summary-card:hover {
+    background: rgba(147, 51, 234, 0.2) !important;
+    transition: background 0.3s ease;
+}
+
+/* Overlay para modales */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Efectos de carga */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Animación de entrada para elementos */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
